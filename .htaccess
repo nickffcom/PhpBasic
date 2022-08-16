@@ -1,0 +1,16 @@
+# Code by DTT ( https://www.facebook.com/207DTT.MMO1 )
+# Create date : 28/9/2020
+
+RewriteEngine On
+RewriteRule ^action/(.*?)$ action.php?px=$1 [NC,QSA]
+RewriteRule ^api/(.*?)$ api.php?path=$1 [NC,QSA]
+RewriteRule ^api_tool/(.*?)$ api_tool.php?path=$1 [NC,QSA]
+RewriteRule ^admin/(.*?)$ index.php?p=admin&act=$1 [NC,QSA]
+
+RewriteRule ^api/get/history$ ./api/history.php [L]
+RewriteRule ^api/users/proxy$ ./api/proxy.php [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*?)$ index.php?p=$1 [NC,QSA]
